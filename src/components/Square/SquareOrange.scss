@@ -1,0 +1,30 @@
+@import '../global.scss';
+$orange: #ff5e30;
+
+.square-orange {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: $base-pixel;
+  //height: $base-pixel;
+  background-color: $orange;
+  animation: square-orange-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes square-orange-jump {
+  0% {
+    height: 0px;
+  }
+  23% {
+    height: 0px;
+  }
+  25% {
+    height: $base-pixel; // to high position
+  }
+  82% {
+    height: $base-pixel; // little jump
+  }
+  84% {
+    height: 0px;
+  }
+}

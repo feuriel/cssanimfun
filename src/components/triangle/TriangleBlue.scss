@@ -1,0 +1,46 @@
+@import '../global.scss';
+$color: #007aff;
+
+.triangle-blue {
+  border-bottom: $base-pixel-border solid $color;
+  border-left: $base-pixel-border solid transparent;
+  border-right: $base-pixel-border solid $color;
+  border-top: $base-pixel-border solid transparent;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom:0;
+  left:0;
+  transform: translateY(0);
+  animation: triangle-blue-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes triangle-blue-jump {
+  0% {
+    transform: translateY(0px); // low position
+  }
+  25% {
+    transform: translateY(0px); // low position end
+  }
+  30% {
+    transform: translateY(-$base-pixel - $base-pixel-border); // to high position (+ little jump)
+  }
+  33% {
+    transform: translateY(-$base-pixel - $base-pixel-border); // to high position (+ little jump)
+  }
+  35% {
+    transform: translateY(-$base-pixel); // high position
+  }
+  75% {
+    transform: translateY(-$base-pixel); // high position ending
+  }
+  78% {
+    transform: translateY(-$base-pixel - $base-pixel-border); // little jump
+  }
+  84% {
+    transform: translateY(-$base-pixel - $base-pixel-border + 3px); // little jump slow
+  }
+  90% {
+    transform: translateY(0px); // back to low position
+  }
+}

@@ -1,0 +1,33 @@
+@import '../global.scss';
+$color: repeating-linear-gradient(
+  -45deg,
+  white,
+  white 3px,
+  green 3px,
+  green 6px
+);
+
+.rectangle-green {
+  background: $color;
+  //height: $base-pixel;
+  width: 2 * $base-pixel;
+  animation: rectangle-green-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes rectangle-green-jump {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 0px;
+  }
+  28% {
+    height: $base-pixel; // to high position
+  }
+  88% {
+    height: $base-pixel; // little jump
+  }
+  90% {
+    height: 0px;
+  }
+}

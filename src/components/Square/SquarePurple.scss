@@ -1,0 +1,30 @@
+@import '../global.scss';
+$orange: #8b78f1;
+
+.square-purple {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: $base-pixel;
+  //height: $base-pixel;
+  background-color: $orange;
+  animation: square-purple-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes square-purple-jump {
+  0% {
+    height: 0px;
+  }
+  20% {
+    height: 0px;
+  }
+  22% {
+    height: $base-pixel; // to high position
+  }
+  76% {
+    height: $base-pixel; // little jump
+  }
+  80% {
+    height: 0px;
+  }
+}

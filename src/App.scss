@@ -1,0 +1,42 @@
+$base-pixel: 30px;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.pos {
+  position:absolute;
+  bottom: 0;
+  left:0;
+  &.pos1 {
+    left: $base-pixel;
+  }
+  &.pos2 {
+    left: 2 * $base-pixel;
+  }
+  &.pos3 {
+    left: 3 * $base-pixel;
+  }
+  &.pos4 {
+    left: 4 * $base-pixel;
+  }
+  &.pos5 {
+    left: 5 * $base-pixel;
+  }
+}
+
+.otter-gif-animation.is-blocks {
+  width: 195px;
+}
+.otter-gif-animation {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1, h2 {
+  display: flex;
+  justify-content: center;
+}

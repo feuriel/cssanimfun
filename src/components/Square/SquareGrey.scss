@@ -1,0 +1,61 @@
+@import '../global.scss';
+$grey: #8395a5;
+
+.square-grey {
+  width: $base-pixel;
+  height: $base-pixel;
+  background-color: $grey;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  //transform: rotateZ(90deg);
+  animation: square-grey-jump infinite $animation-time #{$animation-timing-function};
+  border-radius: 0 90% 0 0;
+}
+
+@keyframes square-grey-jump {
+  0% {
+    height: 0px;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+  31% {
+    height: 0px;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+  32% {
+    height: $base-pixel;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+  36% {
+    height: $base-pixel;
+    transform: translateY(-150px) rotateZ(25deg);
+  }
+  38% {
+    height: $base-pixel;
+    transform: translateY(-60px) rotateZ(0);
+  }
+  63% {
+    height: $base-pixel;
+    transform: translateY(-60px) rotateZ(0);
+  }
+  64% {
+    height: $base-pixel;
+    transform: translateY(-100px) rotateZ(0);
+  }
+  66% {
+    height: $base-pixel; // little jump
+    transform: translateY(-120px) rotateZ(45deg);
+  }
+  70% {
+    height: $base-pixel;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+  71% {
+    height: 0px;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+  100% {
+    height: 0px;
+    transform: translateY(-90px) rotateZ(90deg);
+  }
+}

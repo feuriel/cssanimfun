@@ -1,0 +1,56 @@
+@import '../global.scss';
+$pink: #fb97b5;
+
+.square-pink {
+  width: $base-pixel;
+  height: $base-pixel;
+  background-color: $pink;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(30px) translateY(-60px);
+  animation: square-pink-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes square-pink-jump {
+  0% {
+    height: 0px;
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+  24% {
+    height: 0px;
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+  25% {
+    height: $base-pixel; // little jump
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+  27% {
+    height: $base-pixel; // little jump
+    transform: translateX(0) translateY(-100px) rotateZ(0);
+  }
+  31% {
+    height: $base-pixel; // little jump
+    transform: translateX(30px) translateY(-60px) rotateZ(90deg);
+  }
+  70% {
+    height: $base-pixel; // little jump
+    transform: translateX(30px) translateY(-60px) rotateZ(90deg);
+  }
+  72% {
+    height: $base-pixel; // little jump
+    transform: translateX(30px) translateY(-90px) rotateZ(90deg);
+  }
+  75% {
+    height: $base-pixel; // little jump
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+  76% {
+    height: 0;
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+  100% {
+    height: 0px;
+    transform: translateX(0) translateY(-60px) rotateZ(0);
+  }
+}

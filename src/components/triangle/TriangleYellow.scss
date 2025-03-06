@@ -1,0 +1,57 @@
+@import '../global.scss';
+$color: #ffe370;
+
+.triangle-yellow {
+  border-bottom: $base-long-border solid $color;
+  border-left: $base-long-border solid transparent;
+  border-right: $base-long-border solid transparent;
+  border-top: $base-long-border solid transparent;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom: 0;
+  left: -$base-long-threshold;
+  //transform:
+  //transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
+  animation: triangle-yellow-jump infinite $animation-time #{$animation-timing-function};
+  //transform:rotate(135deg);
+}
+
+@keyframes triangle-yellow-jump {
+  0% {
+    // low position
+    transform: translateX(0) translateY(0) rotateZ(0); // low position
+  }
+  20% {
+    // low position end
+    transform: translateX(0) translateY(0) rotateZ(0);
+  }
+  23% {
+    // (start rotation delayed)
+    transform: translateX(0) translateY(-15px) rotateZ(0);
+  }
+  27% {
+    // to high position (+ little jump)
+    transform: translateX(-15px) translateY(-50px) rotateZ(-110deg);
+  }
+  35% {
+    // high position
+    transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
+  }
+  75% {
+    // high position ending
+    transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
+  }
+  78% {
+    // little jump
+    transform: translateX(-15px) translateY(-60px) rotateZ(-110deg);
+  }
+  82% {
+    // little jump slow
+    transform: translateX(0px) translateY(-30px) rotateZ(0);
+  }
+  84% {
+    // back to low position
+    transform: translateX(0) translateY(0) rotateZ(0);
+  }
+}

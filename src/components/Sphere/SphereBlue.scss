@@ -1,0 +1,73 @@
+@import '../global.scss';
+$color: #52d1f1;
+
+.sphere-blue {
+  //height: $base-pixel;
+  //width: $base-pixel;
+  border-radius: 50%;
+  background-color: $color;
+  animation: sphere-blue-jump infinite $animation-time #{$animation-timing-function};
+}
+
+@keyframes sphere-blue-jump {
+  0% {
+    // low position
+    height: 0;
+    width: 0;
+    transform: translateX(15px);
+  }
+  18% {
+    // low position end
+    height: 0;
+    width: 0;
+    transform: translateX(15px);
+  }
+  22% {
+    // to high position (+ little jump)
+    transform: translateY(-50px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  24% {
+    // to high position (+ little jump)
+    transform: translateY(-50px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  28% {
+    // high position
+    transform: translateY(-30px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  65% {
+    // high position ending
+    transform: translateY(-30px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  67% {
+    // high position ending
+    transform: translateY(-50px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  70% {
+    // little jump
+    transform: translateY(-60px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  75% {
+    // little jump slow
+    transform: translateY(-50px);
+    height: $base-pixel;
+    width: $base-pixel;
+  }
+  80% {
+    // back to low position
+    transform: translateX(15px);
+    height: 0;
+    width: 0;
+  }
+}

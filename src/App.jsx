@@ -69,7 +69,7 @@ function App() {
         </figure>
       </section>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-      Copyright © 2017 -<span style={{paddingInline: '3px'}}>{timeText} </span>
+       - Copyright © 2017 -<span style={{paddingInline: '3px'}}>{timeText} </span>
        Gabriel S -
       <a href="" style={{paddingLeft: '3px'}}
         >R Studio</a

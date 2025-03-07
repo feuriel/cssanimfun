@@ -1,9 +1,15 @@
-$base-pixel: 30px;
-
-* {
+body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  --base-pixel: 30px;
+  --animation-time: 4s;
+  --base-pixel-border: calc(var(--base-pixel) / 2);
+  --base-long: calc(1.414 * var(--base-pixel));//42px; // should be sqrt(base-pixel² + base-pixel²);
+  --base-long-border : calc(var(--base-long) : 2);
+  --base-long-threshold : calc(var(--base-long) - var(--base-pixel)) / 2;
+  --animation-timing-function: linear;
+
 }
 
 .pos {
@@ -11,19 +17,19 @@ $base-pixel: 30px;
   bottom: 0;
   left:0;
   &.pos1 {
-    left: $base-pixel;
+    left: var(--base-pixel);
   }
   &.pos2 {
-    left: 2 * $base-pixel;
+    left: calc(2 * var(--base-pixel));
   }
   &.pos3 {
-    left: 3 * $base-pixel;
+    left: calc(3 * var(--base-pixel));
   }
   &.pos4 {
-    left: 4 * $base-pixel;
+    left: calc(4 * var(--base-pixel));
   }
   &.pos5 {
-    left: 5 * $base-pixel;
+    left: calc(5 * var(--base-pixel));
   }
 }
 

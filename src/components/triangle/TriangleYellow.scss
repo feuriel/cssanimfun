@@ -1,26 +1,35 @@
-@import '../global.scss';
-$color: #ffe370;
-
 .triangle-yellow {
-  border-bottom: $base-long-border solid $color;
-  border-left: $base-long-border solid transparent;
-  border-right: $base-long-border solid transparent;
-  border-top: $base-long-border solid transparent;
+  --color: #ffe370;
+  border-bottom-width: calc(var(--base-long) /2);
+  border-bottom-color: var(--color);
+  border-bottom-style: solid;
+  //border-left: var(--base-pixel-border) solid transparent;
+  border-left-width: calc(var(--base-long) /2);
+  border-left-color: transparent;
+  border-left-style: solid;
+  //border-right: var(--base-pixel-border) solid transparent;
+  border-right-width: calc(var(--base-long) /2);
+  border-right-color: transparent;
+  border-right-style: solid;
+  //border-top: var(--base-pixel-border) solid transparent;
+  border-top-width: calc(var(--base-long) /2);
+  border-top-color: transparent;
+  border-top-style: solid;
   height: 0px;
   width: 0px;
   position: absolute;
   bottom: 0;
-  left: -$base-long-threshold;
+  left: calc((-1) * var(--base-long-threshold));
   //transform:
   //transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
-  animation: triangle-yellow-jump infinite $animation-time #{$animation-timing-function};
+  animation: triangle-yellow-jump infinite var(--animation-time) var(--animation-timing-function);
   //transform:rotate(135deg);
 }
 
 @keyframes triangle-yellow-jump {
   0% {
     // low position
-    transform: translateX(0) translateY(0) rotateZ(0); // low position
+    transform: translateX(0) translateY(0) rotateZ(0);
   }
   20% {
     // low position end
@@ -28,27 +37,27 @@ $color: #ffe370;
   }
   23% {
     // (start rotation delayed)
-    transform: translateX(0) translateY(-15px) rotateZ(0);
+    transform: translateX(0) translateY(calc((-1) * var(--base-pixel) / 2)) rotateZ(0);
   }
   27% {
     // to high position (+ little jump)
-    transform: translateX(-15px) translateY(-50px) rotateZ(-110deg);
+    transform: translateX(calc((-1) * var(--base-pixel) / 2)) translateY(calc((-2) * var(--base-pixel))) rotateZ(-110deg);
   }
   35% {
     // high position
-    transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
+    transform: translateX(calc((-1) * var(--base-pixel) / 2)) translateY(calc((-3/10) * var(--base-pixel))) rotateZ(-135deg);
   }
   75% {
     // high position ending
-    transform: translateX(-15px) translateY(-9px) rotateZ(-135deg);
+    transform: translateX(calc((-1) * var(--base-pixel) / 2)) translateY(calc((-3/10) * var(--base-pixel))) rotateZ(-135deg);
   }
   78% {
     // little jump
-    transform: translateX(-15px) translateY(-60px) rotateZ(-110deg);
+    transform: translateX(calc((-1) * var(--base-pixel) / 2)) translateY(calc((-2) * var(--base-pixel))) rotateZ(-110deg);
   }
   82% {
     // little jump slow
-    transform: translateX(0px) translateY(-30px) rotateZ(0);
+    transform: translateX(0) translateY(calc((-1) * var(--base-pixel))) rotateZ(0);
   }
   84% {
     // back to low position

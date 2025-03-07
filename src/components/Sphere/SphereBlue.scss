@@ -1,12 +1,11 @@
-@import '../global.scss';
-$color: #52d1f1;
+//@import '../global.scss';
+
 
 .sphere-blue {
-  //height: $base-pixel;
-  //width: $base-pixel;
+  --color: #52d1f1;
   border-radius: 50%;
-  background-color: $color;
-  animation: sphere-blue-jump infinite $animation-time #{$animation-timing-function};
+  background-color: var(--color);
+  animation: sphere-blue-jump infinite var(--animation-time) var(--animation-timing-function);
 }
 
 @keyframes sphere-blue-jump {
@@ -14,59 +13,59 @@ $color: #52d1f1;
     // low position
     height: 0;
     width: 0;
-    transform: translateX(15px);
+    transform: translateX(calc(var(--base-pixel) / 2));
   }
   18% {
     // low position end
     height: 0;
     width: 0;
-    transform: translateX(15px);
+    transform: translateX(calc(var(--base-pixel) / 2));
   }
   22% {
     // to high position (+ little jump)
-    transform: translateY(-50px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * 1.6 * (-1)));
+    height:var(--base-pixel);
+    width: var(--base-pixel);
   }
   24% {
     // to high position (+ little jump)
-    transform: translateY(-50px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * 1.6 * (-1)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   28% {
     // high position
-    transform: translateY(-30px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * (-1)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   65% {
     // high position ending
-    transform: translateY(-30px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * (-1)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   67% {
     // high position ending
-    transform: translateY(-50px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * (-1.6)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   70% {
     // little jump
-    transform: translateY(-60px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * (-1.8)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   75% {
     // little jump slow
-    transform: translateY(-50px);
-    height: $base-pixel;
-    width: $base-pixel;
+    transform: translateY(calc(var(--base-pixel) * (-1.6)));
+    height: var(--base-pixel);
+    width: var(--base-pixel);
   }
   80% {
     // back to low position
-    transform: translateX(15px);
+    transform: translateX(calc(var(--base-pixel) / 2));
     height: 0;
     width: 0;
   }

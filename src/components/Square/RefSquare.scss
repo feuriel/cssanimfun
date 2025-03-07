@@ -1,11 +1,9 @@
-@import '../global.scss';
-
 .ref-square {
     position: absolute;
     left:0;
     bottom:0;
-    width: $base-pixel;
-    height: $base-pixel;
+    width: var(--base-pixel);
+    height: var(--base-pixel);
     background-color:red;
     opacity: .2;
 }

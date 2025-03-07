@@ -1,52 +1,49 @@
-@import '../global.scss';
-$yellow: #ffe370;
-
 .square-yellow {
-  width: $base-pixel;
-  height: $base-pixel;
-  background-color: $yellow;
+  width: var(--base-pixel);
+  height: var(--base-pixel);
+  --color:#ffe370;
+  background-color: var(--color);
   position: absolute;
   bottom: 0;
   left: 0;
-  //transform: translateX(-30px) translateY(-60px);
-  animation: square-yellow-jump infinite $animation-time #{$animation-timing-function};
+  animation: square-yellow-jump infinite var(--animation-time) var(--animation-timing-function);
 }
 
 @keyframes square-yellow-jump {
   0% {
     height: 0px;
-    transform:  translateX(0px) translateY(-60px);
+    transform:  translateX(0px) translateY(calc(var(--base-pixel) * -2));
   }
   37% {
     height: 0px;
-    transform:  translateX(0px) translateY(-60px);
+    transform:  translateX(0px) translateY(calc(var(--base-pixel) * -2));
   }
   38% {
-    height: $base-pixel; // little jump
-    transform: translateX(0px) translateY(-60px);
+    height: var(--base-pixel); // little jump
+    transform: translateX(0px) translateY(calc(var(--base-pixel) * -2));
   }
   43% {
-      height: $base-pixel;
-      transform: translateX(-30px) translateY(-60px) rotateZ(-90deg);
+      height: var(--base-pixel);
+      transform: translateX(calc(var(--base-pixel) * -1)) translateY(calc(var(--base-pixel) * -2)) rotateZ(-90deg);
   }
   47% {
-    height: $base-pixel;
-    transform: translateX(-30px) translateY(-60px) rotateZ(-90deg);
+    height: var(--base-pixel);
+    transform: translateX(calc(var(--base-pixel) * -1)) translateY(calc(var(--base-pixel) * -2)) rotateZ(-90deg);
   }
   63% {
-    height: $base-pixel; // little jump
-    transform: translateX(-30px) translateY(-60px) rotateZ(-90deg);
+    height: var(--base-pixel); // little jump
+    transform: translateX(calc(var(--base-pixel) * -1)) translateY(calc(var(--base-pixel) * -2)) rotateZ(-90deg);
   }
   67% {
-    height: $base-pixel; // little jump
-    transform: translateX(0px) translateY(-60px) rotateZ(0deg);
+    height: var(--base-pixel); // little jump
+    transform: translateX(0px) translateY(calc(var(--base-pixel) * -2)) rotateZ(0deg);
   }
   68% {
     height: 0px;
-    transform:  translateX(0px) translateY(-60px);
+    transform:  translateX(0px) translateY(calc(var(--base-pixel) * -2));
   }
   100% {
     height: 0px;
-    transform:  translateX(0px) translateY(-60px);
+    transform:  translateX(0px) translateY(calc(var(--base-pixel) * -2));
   }
 }

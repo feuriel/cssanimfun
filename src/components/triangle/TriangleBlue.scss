@@ -1,18 +1,16 @@
-@import '../global.scss';
-$color: #007aff;
-
 .triangle-blue {
-  border-bottom: $base-pixel-border solid $color;
-  border-left: $base-pixel-border solid transparent;
-  border-right: $base-pixel-border solid $color;
-  border-top: $base-pixel-border solid transparent;
+  --color:#007aff;
+  border-bottom: var(--base-pixel-border) solid var(--color);
+  border-left: var(--base-pixel-border) solid transparent;
+  border-right: var(--base-pixel-border) solid var(--color);
+  border-top: var(--base-pixel-border) solid transparent;
   height: 0px;
   width: 0px;
   position: absolute;
   bottom:0;
   left:0;
   transform: translateY(0);
-  animation: triangle-blue-jump infinite $animation-time #{$animation-timing-function};
+  animation: triangle-blue-jump infinite var(--animation-time) var(--animation-timing-function);
 }
 
 @keyframes triangle-blue-jump {
@@ -23,22 +21,22 @@ $color: #007aff;
     transform: translateY(0px); // low position end
   }
   30% {
-    transform: translateY(-$base-pixel - $base-pixel-border); // to high position (+ little jump)
+    transform: translateY(calc(var(--base-pixel) * (-1) - var(--base-pixel-border))); // to high position (+ little jump)
   }
   33% {
-    transform: translateY(-$base-pixel - $base-pixel-border); // to high position (+ little jump)
+    transform: translateY(calc(var(--base-pixel) * (-1) - var(--base-pixel-border))); // to high position (+ little jump)
   }
   35% {
-    transform: translateY(-$base-pixel); // high position
+    transform: translateY(calc(var(--base-pixel) * (-1))); // high position
   }
   75% {
-    transform: translateY(-$base-pixel); // high position ending
+    transform: translateY(calc(var(--base-pixel) * (-1))); // high position ending
   }
   78% {
-    transform: translateY(-$base-pixel - $base-pixel-border); // little jump
+    transform: translateY(calc(var(--base-pixel) * (-1) - var(--base-pixel-border))); // little jump
   }
   84% {
-    transform: translateY(-$base-pixel - $base-pixel-border + 3px); // little jump slow
+    transform: translateY(calc(var(--base-pixel) * (-1) - var(--base-pixel-border) + 3px)); // little jump slow
   }
   90% {
     transform: translateY(0px); // back to low position

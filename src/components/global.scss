@@ -1,7 +1,0 @@
-$base-pixel: 30px;
-$base-pixel-border: ($base-pixel) / 2;
-$base-long: 42px; // should be sqrt(base-pixel² + base-pixel²);
-$base-long-border : ($base-long) / 2;
-$base-long-threshold : ($base-long - $base-pixel) / 2;
-$animation-time: 4s;
-$animation-timing-function: "linear";

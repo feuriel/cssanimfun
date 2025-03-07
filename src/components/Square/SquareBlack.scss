@@ -1,11 +1,9 @@
-@import '../global.scss';
-$color: #052a4c;
-
 .square-black {
-  background-color: $color;
-  width: $base-pixel;
-  //height: $base-pixel;
-  animation: square-black-jump infinite $animation-time #{$animation-timing-function};
+  --color: #052a4c;
+  background-color: var(--color);
+  width: var(--base-pixel);
+  //height: var(--base-pixel);
+  animation: square-black-jump infinite var(--animation-time) var(--animation-timing-function);
 }
 
 @keyframes square-black-jump {
@@ -18,35 +16,31 @@ $color: #052a4c;
     transform: translateY(0) rotateZ(0);
   }
   25% {
-    height: $base-pixel; // little jump
-    transform: translateY(-135px) rotateZ(90deg);
+    height: var(--base-pixel); // little jump
+    transform: translateY(calc(5.5 * var(--base-pixel) * (-1))) rotateZ(90deg);
   }
   29% {
-    height: $base-pixel; // little jump
-    transform: translateY(-30px) rotateZ(180deg);
+    height: var(--base-pixel); // little jump
+    transform: translateY(calc(var(--base-pixel) * (-1)) ) rotateZ(180deg);
   }
   30% {
-    height: 2 * $base-pixel; // little jump
+    height: calc(2 * var(--base-pixel)); // little jump
     transform: translateY(0) rotateZ(180deg);
   }
   70% {
-    height: 2 * $base-pixel; // little jump
+    height: calc(2 * var(--base-pixel)); // little jump
     transform: translateY(0) rotateZ(180deg);
   }
   72% {
-    height: $base-pixel; // little jump
-    transform: translateY(-120px) rotateZ(160deg);
+    height: var(--base-pixel); // little jump
+    transform: translateY(calc(var(--base-pixel) * 4 * (-1)) ) rotateZ(160deg);
   }
   77% {
-    height: $base-pixel; // little jump
-    transform: translateY(-150px) rotateZ(90deg);
+    height: var(--base-pixel); // little jump
+    transform: translateY(calc(var(--base-pixel) * 5 * (-1)) ) rotateZ(90deg);
   }
-  //   80% {
-  //     height: $base-pixel; // little jump
-  //     transform: translateY(-100px) rotateZ(90deg);
-  //   }
   83% {
-    height: $base-pixel;
+    height: var(--base-pixel);
     transform: translateY(-1px) rotateZ(0);
   }
   84% {

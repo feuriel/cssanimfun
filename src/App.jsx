@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.scss';
 
 import TriangleBlue from './components/triangle/TriangleBlue.jsx';
@@ -11,14 +12,52 @@ import SquareBlack from './components/Square/SquareBlack';
 import SquarePink from './components/Square/SquarePink';
 import SquareYellow from './components/Square/SquareYellow';
 import SquareGrey from './components/Square/SquareGrey';
+import { Slider } from '@/components/ui/slider';
+import { Toggle } from '@/components/ui/toggle';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 function App() {
   const timeText = new Date().getFullYear();
+  const [speed, setSpeed] = useState(4);
+  const [selectedValue, setSelectedValue] = useState('');
+  // Select an element
+  const element = document.body;
+
+  // Set a CSS variable on that element
+  element.style.setProperty('--animation-time', `${speed}s`);
+  if (selectedValue === 'small') {
+    element.style.setProperty('--base-pixel', `10px`);
+  } else if (selectedValue === 'big') {
+    element.style.setProperty('--base-pixel', `50px`);
+  } else {
+    element.style.setProperty('--base-pixel', `30px`);
+  }
+
   return (
     <div style={{ margin: '20px' }}>
+      <div style={{ width: '300px', margin: '20px' }}></div>
       <section style={{ margin: '20px' }}>
         <h1>CSS is Fun</h1> <br />
-        <h2>Pure css version :)</h2>
+        <h2 style={{ marginBottom: '20px' }}>
+          Pure css version - feel free to set up the speed ! :)
+        </h2>
+        <div style={{ marginBottom: '20px' }}>
+          <Slider
+            defaultValue={[speed]}
+            min={1}
+            max={10}
+            step={1}
+            onValueChange={(value) => setSpeed(value[0])}
+          />
+        </div>
+        <ToggleGroup
+          type="single"
+          value={selectedValue}
+          onValueChange={(value) => setSelectedValue(value)}
+        >
+          <ToggleGroupItem value="small">A little bit smaller</ToggleGroupItem>
+          <ToggleGroupItem value="big">A little bit bigger</ToggleGroupItem>
+        </ToggleGroup>
         <div
           style={{
             padding: '100px',
@@ -69,12 +108,13 @@ function App() {
         </figure>
       </section>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-      Copyright © 2017 -<span style={{paddingInline: '3px'}}>{timeText} </span>
-       Gabriel S -
-      <a href="" style={{paddingLeft: '3px'}}
-        >R Studio</a
-      >
-    </div>
+        Copyright © 2017 -
+        <span style={{ paddingInline: '3px' }}>{timeText} </span>
+        Gabriel S -
+        <a href="" style={{ paddingLeft: '3px' }}>
+          R Studio
+        </a>
+      </div>
     </div>
   );
 }

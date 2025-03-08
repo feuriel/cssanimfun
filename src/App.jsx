@@ -90,7 +90,7 @@ function App() {
           </div>
         </div>
         <h2>
-          Original Version (from
+          Original Version below (from
           <a
             style={{ paddingLeft: '3px' }}
             href="https://www.metalab.co/projects/otter"

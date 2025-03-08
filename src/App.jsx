@@ -50,14 +50,18 @@ function App() {
             onValueChange={(value) => setSpeed(value[0])}
           />
         </div>
-        <ToggleGroup
-          type="single"
-          value={selectedValue}
-          onValueChange={(value) => setSelectedValue(value)}
-        >
-          <ToggleGroupItem value="small">A little bit smaller</ToggleGroupItem>
-          <ToggleGroupItem value="big">A little bit bigger</ToggleGroupItem>
-        </ToggleGroup>
+        <diV style={{ display: 'flex', justifyContent: 'center' }}>
+          <ToggleGroup
+            type="single"
+            value={selectedValue}
+            onValueChange={(value) => setSelectedValue(value)}
+          >
+            <ToggleGroupItem value="small">
+              A little bit smaller
+            </ToggleGroupItem>
+            <ToggleGroupItem value="big">A little bit bigger</ToggleGroupItem>
+          </ToggleGroup>
+        </diV>
         <div
           style={{
             padding: '100px',

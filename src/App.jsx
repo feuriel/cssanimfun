@@ -50,7 +50,7 @@ function App() {
             onValueChange={(value) => setSpeed(value[0])}
           />
         </div>
-        <diV style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <ToggleGroup
             type="single"
             value={selectedValue}
@@ -61,7 +61,7 @@ function App() {
             </ToggleGroupItem>
             <ToggleGroupItem value="big">A little bit bigger</ToggleGroupItem>
           </ToggleGroup>
-        </diV>
+        </div>
         <div
           style={{
             padding: '100px',
@@ -114,9 +114,13 @@ function App() {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         Copyright © 2017 -
         <span style={{ paddingInline: '3px' }}>{timeText} </span>
-        Gabriel S -
-        <a href="" style={{ paddingLeft: '3px' }}>
-          R Studio
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://gabriel-somogyi.vercel.app/"
+          style={{ paddingLeft: '3px' }}
+        >
+          Gabriel S.
         </a>
       </div>
     </div>
